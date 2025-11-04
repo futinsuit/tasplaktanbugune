@@ -50,14 +50,22 @@
     .foot{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
     .note{background:#0c1020; border:1px dashed var(--line); padding:12px; border-radius:12px; color:var(--muted)}
     .update{font-size:12px; color:var(--muted)}
-    /* Bakım ekranı */
-    .maintenance{position:fixed; inset:0; background:rgba(15,18,33,.98); backdrop-filter:saturate(180%) blur(4px); display:none; place-items:center; z-index:9999}
+    @media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+    @media (max-width: 560px){.grid{grid-template-columns:1fr}}
+  .maintenance{position:fixed; inset:0; background:rgba(15,18,33,.98); backdrop-filter:saturate(180%) blur(4px); display:none; place-items:center; z-index:9999}
     .maintenance .panel{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:24px; max-width:520px; text-align:center; box-shadow:var(--shadow)}
     .maintenance .icon{font-size:48px; margin-bottom:8px}
     .maintenance h1{margin:.2rem 0 6px}
-    @media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
-    @media (max-width: 560px){.grid{grid-template-columns:1fr}}
   </style>
+  <!-- SEO & Sosyal Paylaşım meta'ları -->
+  <meta name="author" content="TaşPlaktanBugüne" />
+  <meta name="keywords" content="Anadolu Rock, Cem Karaca, Barış Manço, Erkin Koray, şarkı hikayeleri, Türk rock arşivi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f1221" />
+  <meta property="og:title" content="TaşPlaktanBugüne | Anadolu Rock Arşivi" />
+  <meta property="og:description" content="Cem Karaca, Barış Manço, Erkin Koray ve diğerleri hakkında güvenilir bilgiler ve şarkıların yapım hikâyeleri." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230f1221'/><stop offset='1' stop-color='%23171a2e'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><g fill='%23f2c14e' font-family='Verdana' font-size='48' font-weight='700'><text x='50%' y='50%' text-anchor='middle'>Ta%C5%9FPlaktanBug%C3%BCne</text></g></svg>" />
 </head>
 <body>
   <!-- Bakım Ekranı (MAINTENANCE=true iken görünür) -->
@@ -69,7 +77,6 @@
       <p>Yardım için: <a href="mailto:poyrazbusinnes@gmail.com">poyrazbusinnes@gmail.com</a></p>
     </div>
   </div>
-
   <!-- Header -->
   <header>
     <div class="container nav">
@@ -96,7 +103,7 @@
           <a class="btn primary" href="#sarkilar">Şarkı hikâyelerine git</a>
           <a class="btn ghost" href="#metod">Metodoloji</a>
         </div>
-        <p class="update" style="margin-top:8px">Sürüm: v1 • Son güncelleme: <span id="guncelleme"></span></p>
+        <p class="update" style="margin-top:8px">Sürüm: v1 • Son güncelleme: 03 Kasım 2025</p>
       </div>
       <div class="card">
         <strong>Bu hafta öne çıkan:</strong>
@@ -161,10 +168,94 @@
         </div>
       </div>
 
-      <div class="grid" id="songGrid">
-        <!-- Kart 1 (örnek/yer tutucu) -->
-        <article class="card song" data-artist="Cem Karaca" data-year="1972">
-          <div class="meta"><span class="tag">1972</span><span class="tag">Cem Karaca</span><span class="tag">Dervişan</span></div>
+      $1
+        <!-- Otomatik arama ile uyumlu kısa şarkı hikâyeleri eklendi -->
+
+        <!-- CEM KARACA -->
+        <article class="card song" data-artist="Cem Karaca" data-year="1975">
+          <div class="meta"><span class="tag">1975</span><span class="tag">Cem Karaca</span><span class="tag">Dervişan</span></div>
+          <h3>Tamirci Çırağı</h3>
+          <p class="muted">Bir tamirhanede başlayan sınıf farkı temalı aşk öyküsü; Karaca'nın toplumsal anlatısının simge eserlerinden.</p>
+          <details><summary>Özet</summary><p>1975 tarihli 45'likte ("Tamirci Çırağı / Nerdesin") yayımlandı; anlatı dili ve sinematografik betimler öne çıkar.</p></details>
+        </article>
+        <article class="card song" data-artist="Cem Karaca" data-year="1974">
+          <div class="meta"><span class="tag">1974</span><span class="tag">Cem Karaca</span><span class="tag">Moğollar</span></div>
+          <h3>Namus Belası</h3>
+          <p class="muted">Anadolu rock ile protest sözlerin güçlü birleşimi; yayınlandığı dönemde hızla popülerleşti.</p>
+          <details><summary>Özet</summary><p>1974 çıkışlı single olarak bilinir; konserlerde de klasiktir.</p></details>
+        </article>
+        <article class="card song" data-artist="Cem Karaca" data-year="1979">
+          <div class="meta"><span class="tag">1979</span><span class="tag">Cem Karaca</span></div>
+          <h3>Resimdeki Gözyaşları</h3>
+          <p class="muted">Karaca'nın en bilinen baladlarından; 1979'da İngilizce versiyonu "Tears" olarak da yayımlandı, 1998'de <em>Ağır Roman</em> OST'de yer aldı.</p>
+        </article>
+        <article class="card song" data-artist="Cem Karaca" data-year="1975">
+          <div class="meta"><span class="tag">1975</span><span class="tag">Cem Karaca</span></div>
+          <h3>Mutlaka Yavrum</h3>
+          <p class="muted">Dönemin politik iklimine gönderme içeren temalarıyla Karaca'nın 70'ler sonundaki çizgisini yansıtır.</p>
+        </article>
+        <article class="card song" data-artist="Cem Karaca" data-year="1975">
+          <div class="meta"><span class="tag">1975</span><span class="tag">Cem Karaca</span><span class="tag">Dervişan</span></div>
+          <h3>Nerdesin</h3>
+          <p class="muted">"Tamirci Çırağı" ile aynı 45'liğin öbür yüzü; vokal anlatımı ve gitar yürüyüşleriyle dikkat çeker.</p>
+        </article>
+
+        <!-- BARIŞ MANÇO -->
+        <article class="card song" data-artist="Barış Manço" data-year="1981">
+          <div class="meta"><span class="tag">1981</span><span class="tag">Barış Manço</span><span class="tag">Kurtalan Ekspres</span></div>
+          <h3>Gülpembe</h3>
+          <p class="muted">Derin duygusal tonu ve melodik yapısıyla 80'lerin başında Manço diskografisinin tepe noktası.</p>
+          <details><summary>Özet</summary><p><em>Sözüm Meclisten Dışarı</em> (1981) albümünde yer alır; Türkiye'de geniş yankı uyandırdı.</p></details>
+        </article>
+        <article class="card song" data-artist="Barış Manço" data-year="1981">
+          <div class="meta"><span class="tag">1981</span><span class="tag">Barış Manço</span></div>
+          <h3>Dönence</h3>
+          <p class="muted">Atmosferik düzenlemesi ve söz-aranjman dengesiyle Manço'nun en çok anılan bestelerinden.</p>
+          <details><summary>Özet</summary><p>Yine <em>Sözüm Meclisten Dışarı</em> albümünde; progresif tınılar ve synth dokuları dikkat çeker.</p></details>
+        </article>
+        <article class="card song" data-artist="Barış Manço" data-year="1983">
+          <div class="meta"><span class="tag">1983</span><span class="tag">Barış Manço</span><span class="tag">Kurtalan Ekspres</span></div>
+          <h3>Halil İbrahim Sofrası</h3>
+          <p class="muted">Halk deyişleri ve çağdaş düzenlemeyi birleştiren güçlü bir anlatı; konserlerin değişmezi.</p>
+          <details><summary>Özet</summary><p><em>Estağfurullah... Ne Haddimize!</em> (1983) albümünün açılış parçasıdır.</p></details>
+        </article>
+        <article class="card song" data-artist="Barış Manço" data-year="1981">
+          <div class="meta"><span class="tag">1981</span><span class="tag">Barış Manço</span></div>
+          <h3>Alla Beni Pulla Beni</h3>
+          <p class="muted">Ritim-melodi oyunu ve sözlerdeki mizahıyla dönemin radyo hiti.</p>
+          <details><summary>Özet</summary><p><em>Sözüm Meclisten Dışarı</em> dönemi üretiminin parçasıdır.</p></details>
+        </article>
+        <article class="card song" data-artist="Barış Manço" data-year="1981">
+          <div class="meta"><span class="tag">1981</span><span class="tag">Barış Manço</span></div>
+          <h3>Ali Yazar Veli Bozar</h3>
+          <p class="muted">Gündelik deyimleri rock formunda bir araya getiren eğlenceli bestelerden.</p>
+        </article>
+
+        <!-- ERKİN KORAY -->
+        <article class="card song" data-artist="Erkin Koray" data-year="1974">
+          <div class="meta"><span class="tag">1974</span><span class="tag">Erkin Koray</span><span class="tag">Psychedelic</span></div>
+          <h3>Şaşkın</h3>
+          <p class="muted">Bağlama-gitar sentezi ve modülasyonlarıyla psikedelik Anadolu rockın mihenk taşlarından.</p>
+          <details><summary>Özet</summary><p>1974 tarihli 45'likte <em>Şaşkın / Eyvah</em> olarak yayımlandı.</p></details>
+        </article>
+        <article class="card song" data-artist="Erkin Koray" data-year="1967">
+          <div class="meta"><span class="tag">1967</span><span class="tag">Erkin Koray</span></div>
+          <h3>Anma Arkadaş</h3>
+          <p class="muted">Erken dönem Koray sound'unun melankolik yüzü; sonraki yıllarda da yeni kayıtlarla yaşadı.</p>
+          <details><summary>Özet</summary><p>1967 tarihli 45'likte ("Anma Arkadaş / Anadoluda Sevdim") çıkışını yaptı.</p></details>
+        </article>
+        <article class="card song" data-artist="Erkin Koray" data-year="1974">
+          <div class="meta"><span class="tag">1974</span><span class="tag">Erkin Koray</span></div>
+          <h3>Fesuphanallah</h3>
+          <p class="muted">Hızlı tempolu yapı ve doğu-batı melodik geçişleriyle sahnede büyük etki yaratan parça.</p>
+        </article>
+        <article class="card song" data-artist="Erkin Koray" data-year="1974">
+          <div class="meta"><span class="tag">1974</span><span class="tag">Erkin Koray</span></div>
+          <h3>Estarabim</h3>
+          <p class="muted">Doğu ezgileriyle rock armonisinin harmanı; uzun formlu düzenlemeler döneminin örneği.</p>
+        </article>
+
+      $3
           <h3>Resimdeki Gözyaşları</h3>
           <p class="muted">Künye: Albüm/Tekli: <em>(doldur)</em> • Söz/Müzik: <em>(doldur)</em> • Aranjör: <em>(doldur)</em> • Stüdyo: <em>(doldur)</em></p>
           <details>
@@ -287,23 +378,23 @@
     </div>
   </section>
 
-  <!-- Çalışma Görseli & Not -->
-  <section id="devam">
-    <div class="container">
-      <div class="section-head"><h2>Çalışma Aşaması</h2><p class="muted">Arşiv büyüyor, yeni sayfalar ekleniyor.</p></div>
-      <div class="card">
-        <p class="muted" style="margin-top:0">Devam edeceğiz yakında...</p>
-        <img alt="Çalışma aşaması – TaşPlaktanBugüne" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230f1221'/><stop offset='1' stop-color='%23171a2e'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><g fill='%23f2c14e' font-family='Verdana' font-size='42' font-weight='700'><text x='50%' y='45%' text-anchor='middle'>Ta%C5%9FPlaktanBug%C3%BCne</text></g><g fill='%23b7bcd4' font-family='Verdana' font-size='24'><text x='50%' y='60%' text-anchor='middle'>%C3%87al%C4%B1%C5%9Fma%20a%C5%9Famas%C4%B1%20%E2%80%94%20Devam%20edece%C4%9Fiz%20yak%C4%B1nda...</text></g></svg>" style="border-radius:12px; box-shadow: var(--shadow);" />
-      </div>
-    </div>
-  </section>
-
   <!-- İletişim -->
   <section id="iletisim">
     <div class="container">
       <div class="section-head"><h2>İletişim</h2><p class="muted">Sosyal bağlantılar veya e-posta.</p></div>
       <div class="card">
         <p>E-posta: <a href="mailto:poyrazbusinnes@gmail.com">poyrazbusinnes@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Çalışma Görseli & Not -->
+  <section id="devam">
+    <div class="container">
+      <div class="section-head"><h2>Çalışma Aşaması</h2><p class="muted">Arşiv büyüyor, yeni sayfalar ekleniyor.</p></div>
+      <div class="card">
+        <p class="muted" style="margin-top:0">Devam edeceğiz yakında...</p>
+        <img loading="lazy" alt="Çalışma aşaması – TaşPlaktanBugüne" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230f1221'/><stop offset='1' stop-color='%23171a2e'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><g fill='%23f2c14e' font-family='Verdana' font-size='42' font-weight='700'><text x='50%' y='45%' text-anchor='middle'>Ta%C5%9FPlaktanBug%C3%BCne</text></g><g fill='%23b7bcd4' font-family='Verdana' font-size='24'><text x='50%' y='60%' text-anchor='middle'>%C3%87al%C4%B1%C5%9Fma%20a%C5%9Famas%C4%B1%20%E2%80%94%20Devam%20edece%C4%9Fiz%20yak%C4%B1nda...</text></g></svg>" style="border-radius:12px; box-shadow: var(--shadow);"/>
       </div>
     </div>
   </section>
@@ -316,40 +407,40 @@
   </footer>
 
   <script>
-    // Tarih damgaları
-    document.getElementById('yil').textContent = new Date().getFullYear();
-    const d = new Date(); document.getElementById('guncelleme').textContent =
-      d.toLocaleDateString('tr-TR', { day:'2-digit', month:'short', year:'numeric' });
-
-    // Basit arama & filtreleme
-    const q = document.getElementById('q');
-    const artistFilter = document.getElementById('artistFilter');
-    const cards = Array.from(document.querySelectorAll('#songGrid .song'));
-    function normalize(t){return (t||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');}
-    function applyFilters(){
-      const term = normalize(q.value);
-      const artist = artistFilter.value;
-      cards.forEach(card=>{
-        const text = normalize(card.innerText);
-        const okTerm = !term || text.includes(term);
-        const okArtist = !artist || card.dataset.artist === artist;
-        card.style.display = (okTerm && okArtist) ? '' : 'none';
-      });
-    }
-    q.addEventListener('input', applyFilters);
-    artistFilter.addEventListener('change', applyFilters);
-
     // Bakım modu: true yapınca tam ekran bakım katmanı açılır.
-    const MAINTENANCE = true; // bakım açmak için true yap
+    const MAINTENANCE = false; // hazırsan false yapıp yayına al
     if (MAINTENANCE) {
       const m = document.getElementById('maintenance');
       if (m) m.style.display = 'grid';
-      let robots = document.querySelector('meta[name="robots"]');
-      if (!robots) {
-        robots = document.createElement('meta'); robots.setAttribute('name','robots'); document.head.appendChild(robots);
-      }
-      robots.setAttribute('content','noindex, nofollow');
+      const robots = document.querySelector('meta[name="robots"]');
+      if (robots) robots.setAttribute('content','noindex, nofollow');
     }
+    // Yıl
+    document.getElementById('yil').textContent = new Date().getFullYear();
+
+    // Yardımcılar
+    const normalize = (t) => (t || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
+    const debounce = (fn, delay=150) => { let id; return (...args)=>{ clearTimeout(id); id=setTimeout(()=>fn(...args), delay); }; };
+
+    // Arama & Filtre (cache ile daha hızlı)
+    const q = document.getElementById('q');
+    const artistFilter = document.getElementById('artistFilter');
+    const cards = Array.from(document.querySelectorAll('#songGrid .song'));
+    const cache = cards.map(el => ({ el, text: normalize(el.textContent), artist: el.dataset.artist }));
+
+    const applyFilters = () => {
+      const term = normalize(q && q.value);
+      const artist = artistFilter && artistFilter.value;
+      for (const item of cache) {
+        const okTerm = !term || item.text.includes(term);
+        const okArtist = !artist || item.artist === artist;
+        item.el.style.display = (okTerm && okArtist) ? '' : 'none';
+      }
+    };
+
+    const applyFiltersDebounced = debounce(applyFilters, 180);
+    if (q) q.addEventListener('input', applyFiltersDebounced);
+    if (artistFilter) artistFilter.addEventListener('change', applyFilters);
   </script>
 </body>
 </html>
