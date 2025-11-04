@@ -341,7 +341,7 @@
     artistFilter.addEventListener('change', applyFilters);
 
     // Bakım modu: true yapınca tam ekran bakım katmanı açılır.
-    const MAINTENANCE = false; // bakım açmak için true yap
+    const MAINTENANCE = true; // bakım açmak için true yap
     if (MAINTENANCE) {
       const m = document.getElementById('maintenance');
       if (m) m.style.display = 'grid';
