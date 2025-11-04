@@ -235,7 +235,7 @@
     // 5) Tarihler ve bakım modu
     document.getElementById('yil').textContent = new Date().getFullYear();
     document.getElementById('guncelleme').textContent = new Date().toLocaleDateString('tr-TR',{day:'2-digit',month:'short',year:'numeric'});
-    const MAINTENANCE = true; if (MAINTENANCE){document.getElementById('maintenance').style.display='grid';let r=document.querySelector('meta[name="robots"]');if(!r){r=document.createElement('meta');r.setAttribute('name','robots');document.head.appendChild(r)}r.setAttribute('content','noindex, nofollow')}
+    const MAINTENANCE = false; if (MAINTENANCE){document.getElementById('maintenance').style.display='grid';let r=document.querySelector('meta[name="robots"]');if(!r){r=document.createElement('meta');r.setAttribute('name','robots');document.head.appendChild(r)}r.setAttribute('content','noindex, nofollow')}
   </script>
 </body>
 </html>
