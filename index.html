@@ -1,4 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaşPlaktanBugüne</title>
+  <style>
+    /* 🎶 Şarkı hikayesi kartlarını düzeltir */
+    #songGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Kart kutularının yüksekliğini sabitle */
+    .card.song {
+      min-height: 280px;
+      padding: 1.2rem;
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Detayların yazısını kesmeden göster */
+    .card.song details {
+      overflow: visible;
+      max-height: none;
+    }
+
+    /* Açılan kutuların arka planını sadeleştir */
+    .card.song details[open] {
+      background: none;
+    }
+
+    /* “Özet” başlığını tıklanabilir yap */
+    .card.song details summary {
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* Ek olarak taşmaları önlemek için */
+    .card.song p, .card.song h3 {
+      overflow-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- senin tüm mevcut site içeriğin burada devam edecek -->
+</body>
+</html>
+
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
