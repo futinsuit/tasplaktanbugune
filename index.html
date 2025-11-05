@@ -7,19 +7,16 @@
   <meta name="description" content="Cem Karaca, Barış Manço, Erkin Koray ve Anadolu Rock için şarkı hikâyeleri, kısa biyografiler ve güvenilir özetler.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2321212b'/%3E%3Ccircle cx='50' cy='50' r='38' fill='%23f9f9fb'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%2321212b'/%3E%3C/svg%3E">
   <style>
-    /* === Tema değişkenleri (koyu varsayılan) === */
     :root{
       --bg:#0b0e1a; --bg-soft:#0f1426; --panel:#141a33; --panel-2:#0f152b;
       --ink:#ecf0ff; --muted:#b9c1dc; --line:rgba(255,255,255,.10);
       --accent:#f3c64b; --accent-2:#7cc7f7; --rad:16px; --shadow:0 12px 40px rgba(0,0,0,.45);
     }
-    /* Açık tema üstüne yazılan değişkenler */
     html[data-theme="light"]{
       --bg:#f6f7fb; --bg-soft:#ffffff; --panel:#ffffff; --panel-2:#f2f4fb;
       --ink:#0b1020; --muted:#4b556e; --line:rgba(0,0,0,.10);
       --accent:#bd8b00; --accent-2:#0e86cf; --shadow:0 8px 28px rgba(0,0,0,.08);
     }
-
     *{box-sizing:border-box}
     html,body{
       margin:0; padding:0;
@@ -29,125 +26,49 @@
         radial-gradient(1000px 600px at 100% 0%, #111a3f 0%, transparent 55%),
         var(--bg);
       color:var(--ink);
-      transition:background .25s ease, color .25s ease; /* yumuşak geçiş */
     }
-    html[data-theme="light"] body{
-      background:var(--bg);
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    html[data-theme="light"] body{background:var(--bg)}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
     .container{max-width:1120px;margin:0 auto;padding:0 18px}
-
-    /* Üst Menü */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(160%) blur(10px);
-      background:linear-gradient(180deg, rgba(11,14,26,.75), rgba(11,14,26,.35));
-      border-bottom:1px solid var(--line)
-    }
-    html[data-theme="light"] header{
-      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.60));
-    }
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(10px);
+      background:linear-gradient(180deg, rgba(11,14,26,.75), rgba(11,14,26,.35));border-bottom:1px solid var(--line)}
+    html[data-theme="light"] header{background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.60))}
     .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .brand .dot{width:12px;height:12px;border-radius:50%;
-      background:conic-gradient(from 30deg,var(--accent),var(--accent-2))}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:conic-gradient(from 30deg,var(--accent),var(--accent-2))}
     nav{display:flex;gap:6px;align-items:center}
-    nav a{
-      color:var(--muted); padding:10px 12px; border-radius:10px;
-      transition:all .18s ease
-    }
-    nav a:hover, nav a:focus-visible{color:var(--ink); background:rgba(0,0,0,.06)}
-    html[data-theme="light"] nav a:hover, html[data-theme="light"] nav a:focus-visible{
-      background:rgba(0,0,0,.06)
-    }
-    .theme-btn{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid var(--line); border-radius:12px; padding:10px 12px;
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
-      cursor:pointer; font-weight:700
-    }
-
-    /* Hero */
-    .hero{padding:64px 0 24px}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:.35rem 0}
-    h2{font-size:clamp(22px,3.2vw,32px);margin:0}
+    nav a{color:var(--muted);padding:10px 12px;border-radius:10px}
+    nav a:hover, nav a:focus-visible{color:var(--ink);background:rgba(0,0,0,.06)}
+    .theme-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));cursor:pointer;font-weight:700}
+    .hero{padding:64px 0 24px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+    h1{font-size:clamp(28px,5vw,48px);line-height:1.1;margin:.35rem 0} h2{font-size:clamp(22px,3.2vw,32px);margin:0}
     p.lead{color:var(--muted)}
-    .badge{
-      display:inline-flex;gap:8px;align-items:center;padding:7px 12px;
-      border:1px solid var(--line); border-radius:999px; color:var(--muted);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))
-    }
-    .btn{
-      display:inline-flex; gap:8px; align-items:center; padding:13px 16px;
-      border-radius:14px; font-weight:700; border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
-      color:var(--ink); transition:transform .12s ease, box-shadow .12s ease, background .2s
-    }
-    .btn.primary{
-      border:none;
-      background:linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 100%);
-      color:#0b0f1e; box-shadow:0 10px 24px rgba(124,199,247,.25)
-    }
-    .btn:hover{transform:translateY(-1px); box-shadow:0 8px 22px rgba(0,0,0,.20)}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-                 var(--panel);
-      border:1px solid var(--line); border-radius:var(--rad); padding:18px; box-shadow:var(--shadow)
-    }
-    html[data-theme="light"] .card{background:var(--panel)}
-    section{padding:48px 0}
-    .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}
-    .muted{color:var(--muted)}
-
-    /* Grid & Etiketler */
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:13px 16px;border-radius:14px;font-weight:700;border:1px solid var(--line);color:var(--ink)}
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 100%);color:#0b0f1e;box-shadow:0 10px 24px rgba(124,199,247,.25)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),var(--panel);border:1px solid var(--line);border-radius:var(--rad);padding:18px;box-shadow:var(--shadow)}
+    section{padding:48px 0}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:18px}.muted{color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .meta{display:flex;gap:10px;flex-wrap:wrap}
-    .tag,.pill{
-      display:inline-block; font-size:12px; font-weight:700; color:#081126; padding:5px 9px;
-      border-radius:999px; box-shadow:inset 0 -1px 0 rgba(0,0,0,.15)
-    }
-    .tag{background:linear-gradient(180deg,#9fd8ff,#86cbff)}
-    .pill{background:linear-gradient(180deg,#ffd86b,#f3c64b)}
-    .note{background:var(--panel-2); border:1px dashed var(--line); padding:12px; border-radius:12px; color:var(--muted)}
+    .tag,.pill{display:inline-block;font-size:12px;font-weight:700;color:#081126;padding:5px 9px;border-radius:999px}
+    .tag{background:linear-gradient(180deg,#9fd8ff,#86cbff)} .pill{background:linear-gradient(180deg,#ffd86b,#f3c64b)}
+    .note{background:var(--panel-2);border:1px dashed var(--line);padding:12px;border-radius:12px;color:var(--muted)}
     .update{font-size:12px;color:var(--muted)}
-
-    /* Arama/Filtre */
-    input[type="search"], select{
-      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-      color:var(--ink); border:1px solid var(--line); border-radius:12px; padding:11px 12px;
-      outline:none; transition:border-color .2s, box-shadow .2s
-    }
-    input[type="search"]:focus, select:focus{border-color:rgba(124,199,247,.9); box-shadow:0 0 0 4px rgba(124,199,247,.18)}
-
-    /* Bakım ekranı */
-    .maintenance{position:fixed; inset:0; display:none; place-items:center; z-index:9999;
-      background:radial-gradient(800px 400px at 10% 10%, rgba(243,198,75,.08), transparent 40%),
-                 linear-gradient(180deg, rgba(11,14,26,.96), rgba(11,14,26,.96))}
-    .maintenance .panel{background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:26px; max-width:560px; text-align:center; box-shadow:var(--shadow)}
-    .maintenance .icon{font-size:56px; margin-bottom:10px}
-    .maintenance h1{margin:.2rem 0 6px}
-
-    /* Altbilgi ve kart hover */
-    footer{padding:44px 0 64px;border-top:1px solid var(--line);color:var(--muted)}
-    .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    #songGrid .card:hover{transform:translateY(-2px); transition:transform .15s ease; box-shadow:0 16px 46px rgba(0,0,0,.35)}
-
-    /* Duyarlılık */
-    @media (max-width:1024px){.grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:920px){.hero-grid{grid-template-columns:1fr}}
-    @media (max-width:560px){.grid{grid-template-columns:1fr}}
+    .maintenance{position:fixed;inset:0;display:none;place-items:center;z-index:9999;background:radial-gradient(800px 400px at 10% 10%, rgba(243,198,75,.08), transparent 40%),linear-gradient(180deg, rgba(11,14,26,.96), rgba(11,14,26,.96))}
+    .maintenance .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;max-width:560px;text-align:center;box-shadow:var(--shadow)}
+    .maintenance .icon{font-size:56px;margin-bottom:10px}
+    footer{padding:44px 0 64px;border-top:1px solid var(--line);color:var(--muted)} .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media (max-width:1024px){.grid{grid-template-columns:1fr 1fr}} @media (max-width:920px){.hero-grid{grid-template-columns:1fr}} @media (max-width:560px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- Bakım -->
+  <!-- Bakım katmanı (dilersen MAINTENANCE=true yap) -->
   <div id="maintenance" class="maintenance" role="status" aria-live="polite">
     <div class="panel">
       <div class="icon" aria-hidden="true">🔧</div>
       <h1>Site Bakımda</h1>
       <p>Kısa süre sonra tekrar buradayız.</p>
-      <p>Yardım: <a href="mailto:poyrazbusinnes@gmail.com">futinbusiness@gmail.com</a></p>
+      <p>Yardım: <a href="mailto:poyrazbusinnes@gmail.com">poyrazbusinnes@gmail.com</a></p>
     </div>
   </div>
 
@@ -156,7 +77,7 @@
       <a href="#" class="brand"><span class="dot" aria-hidden="true"></span> TaşPlaktanBugüne</a>
       <nav>
         <a href="#sanatcilar">Sanatçılar</a>
-        <a href="#sarkilar">Şarkı Hikâyeleri</a>
+        <a href="#sarkilar">Şarkı Arama</a>
         <a href="#donem">Dönem Rehberi</a>
         <a href="#sozluk">Sözlük</a>
         <a href="#kaynakca">Kaynakça</a>
@@ -173,7 +94,7 @@
         <h1>Cem Karaca, Barış Manço, Erkin Koray ve daha fazlası: kısa ama güvenilir şarkı hikâyeleri.</h1>
         <p class="lead">Özetler telife uygun, kaynakla doğrulanabilir ve kolay okunur. Arama ile istediğin şarkıyı anında bul.</p>
         <div style="margin-top:10px" class="meta">
-          <a class="btn primary" href="#sarkilar">Şarkıları keşfet</a>
+          <a class="btn primary" href="#sarkilar">Şarkıları ara</a>
           <span class="update">Sürüm v1 — <span id="guncelleme"></span></span>
         </div>
       </div>
@@ -193,20 +114,20 @@
     <div class="container">
       <div class="section-head">
         <h2>Sanatçılar</h2>
-        <p class="muted">Biyografi ve dönüm noktaları (kısa).</p>
+        <p class="muted">Kısa ama dolu biyografiler — hızlı okumalık, kaynakla doğrulanabilir özetler.</p>
       </div>
       <div class="grid">
         <article class="card">
           <h3>Cem Karaca <span class="pill">Biyografi</span></h3>
-          <p class="muted">1945 İstanbul. Apaslar, Kardaşlar, Moğollar, Dervişan hatlarıyla toplumsal anlatı ve rock sentezi.</p>
+          <p class="muted">1945, İstanbul. 60’ların sonunda <b>Apaşlar</b> (Ferdy Klein Ork.) ile 45’likler; 70’lerde <b>Kardaşlar</b>, <b>Moğollar</b> ve <b>Dervişan</b> ile Anadolu ezgileri–rock sentezi. <i>“Tamirci Çırağı”</i> (1975) ve <i>“Namus Belası”</i> (1974) dönemin toplumsal iklimini sahneye taşır; Almanya yılları sonrası Türkiye’ye dönüşle repertuvarı yeniler.</p>
         </article>
         <article class="card">
           <h3>Barış Manço <span class="pill">Biyografi</span></h3>
-          <p class="muted">1943 İstanbul. Çok disiplinli üretim; 70’ler-80’ler Anadolu pop/rock ve geniş kitle etkisi.</p>
+          <p class="muted">1943, İstanbul. 60’ların beat köklerinden 70’lerde <b>Kurtalan Ekspres</b> ile geniş kitleye erişim. <i>“Sözüm Meclisten Dışarı”</i> (1981) döneminde <i>“Gülpembe”</i>, <i>“Dönence”</i>, <i>“Alla Beni Pulla Beni”</i> gibi kalıcı kayıtlar; 80’ler-90’larda TV programlarıyla kuşaklar arası etki.</p>
         </article>
         <article class="card">
           <h3>Erkin Koray <span class="pill">Biyografi</span></h3>
-          <p class="muted">1941 İstanbul. Bağlama-gitar sentezi; psikedelik formlar ve deneysel düzenlemeler.</p>
+          <p class="muted">1941, İstanbul. Gitar ile bağlamayı aynı cümlede buluşturan öncü. LP dönemine <i>“Elektronik Türküler”</i> (1974) ile güçlü giriş; <i>“Şaşkın”</i>, <i>“Fesuphanallah”</i> gibi 45’likler psikedelik tınıyı Anadolu modlarıyla birleştirir.</p>
         </article>
       </div>
     </div>
@@ -215,24 +136,26 @@
   <section id="sarkilar">
     <div class="container">
       <div class="section-head">
-        <h2>Şarkı Hikâyeleri</h2>
-        <div class="meta" style="flex-wrap:wrap">
-          <input id="q" type="search" placeholder="Şarkı, sanatçı, albüm, yıl, etiket ara…" aria-label="Arama" />
-          <select id="artistFilter" aria-label="Sanatçı filtrele">
-            <option value="">Tümü</option>
-            <option value="Cem Karaca">Cem Karaca</option>
-            <option value="Barış Manço">Barış Manço</option>
-            <option value="Erkin Koray">Erkin Koray</option>
-          </select>
-          <select id="yearFilter" aria-label="Yıl filtrele">
-            <option value="">Yıl</option>
-            <option>1965</option><option>1967</option><option>1973</option><option>1974</option><option>1975</option><option>1977</option><option>1979</option><option>1981</option><option>1983</option>
-          </select>
-        </div>
+        <h2>Şarkı Arama</h2>
+        <p class="muted">Sayfa şarkılarla dolmasın diye sonuçlar yalnızca aradığında listelenir. <b>En az 2 harf</b> yaz.</p>
+      </div>
+
+      <div class="meta" style="flex-wrap:wrap; margin-bottom:14px">
+        <input id="q" type="search" placeholder="Şarkı, sanatçı, albüm, yıl, etiket ara…" aria-label="Arama" />
+        <select id="artistFilter" aria-label="Sanatçı filtrele">
+          <option value="">Tümü</option>
+          <option value="Cem Karaca">Cem Karaca</option>
+          <option value="Barış Manço">Barış Manço</option>
+          <option value="Erkin Koray">Erkin Koray</option>
+        </select>
+        <select id="yearFilter" aria-label="Yıl filtrele">
+          <option value="">Yıl</option>
+          <option>1965</option><option>1967</option><option>1973</option><option>1974</option><option>1975</option><option>1977</option><option>1979</option><option>1981</option><option>1983</option>
+        </select>
       </div>
 
       <div class="grid" id="songGrid"></div>
-      <p class="note" style="margin-top:16px">Aradığını bulamazsan kısa anahtar kelimeler dene (ör: “gözyaşları”, “sofrası”).</p>
+      <p id="searchHint" class="note" style="margin-top:16px">Sonuç görmek için en az 2 harf yaz; gerekirse sanatçı/yıl filtresi kullan.</p>
     </div>
   </section>
 
@@ -271,7 +194,7 @@
     <div class="container">
       <div class="section-head"><h2>İletişim</h2><p class="muted">Sorular ve düzeltmeler için.</p></div>
       <div class="card">
-        <p>E-posta: <a href="mailto:futinbusiness@gmail.com">futinbusiness@gmail.com</a></p>
+        <p>E-posta: <a href="mailto:poyrazbusinnes@gmail.com">poyrazbusinnes@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -284,44 +207,63 @@
   </footer>
 
   <script>
-    // Yardımcılar
+    // Yardımcılar (az yorum)
     const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
     const tag = t => `<span class="tag">${t}</span>`;
 
-    // Şarkı verisi (dokunmadım)
+    // Şarkı verisi — kısa, telife uygun özetler
     const SONGS = [
+      // Cem Karaca
       {title:"Tamirci Çırağı", artist:"Cem Karaca", year:1975, tags:["Dervişan","45'lik"], summary:"Sınıf farkı temalı anlatı; sinematografik söz örgüsü."},
-      {title:"Namus Belası", artist:"Cem Karaca", year:1974, tags:["Moğollar","single"], summary:"Protest ton ve Anadolu tınılarının güçlü birleşimi."},
-      {title:"Resimdeki Gözyaşları", artist:"Cem Karaca", year:1979, tags:["balad"], summary:"Melodik balad; geniş kitle tarafından benimsenen yorum."},
-      {title:"Nerdesin", artist:"Cem Karaca", year:1975, tags:["Dervişan","45'lik"], summary:"Tamirci Çırağı ile çift yüz; vokal anlatımı önde."},
-      {title:"Mutlaka Yavrum", artist:"Cem Karaca", year:1975, tags:["dönem teması"], summary:"Dönemin siyasal iklimine göndermeler içeren parça."},
-      {title:"Gülpembe", artist:"Barış Manço", year:1981, tags:["Kurtalan Ekspres","albüm"], summary:"Duygusal anlatım ve melodik yapı; kalıcı klasik."},
-      {title:"Dönence", artist:"Barış Manço", year:1981, tags:["synth","progresif"], summary:"Atmosferik düzenleme; söz-aranjman dengesi."},
-      {title:"Halil İbrahim Sofrası", artist:"Barış Manço", year:1983, tags:["Anadolu pop"], summary:"Halk deyişleriyle çağdaş düzenlemenin buluşması."},
-      {title:"Alla Beni Pulla Beni", artist:"Barış Manço", year:1981, tags:["radyo hiti"], summary:"Ritim-melodi oyunu ve mizahi dil."},
-      {title:"Ali Yazar Veli Bozar", artist:"Barış Manço", year:1981, tags:["deyimler"], summary:"Gündelik deyimleri rock formunda bir araya getirir."},
-      {title:"Kol Düğmeleri", artist:"Barış Manço", year:1965, tags:["erken dönem"], summary:"Erken dönem romantik balad; sade düzenleme."},
+      {title:"Nerdesin", artist:"Cem Karaca", year:1975, tags:["Dervişan","çift yüz"], summary:"Tamirci Çırağı ile aynı 45'likte; dramatik vokal."},
+      {title:"Namus Belası", artist:"Cem Karaca", year:1974, tags:["Moğollar","single"], summary:"Protest ton ve Anadolu tınılarının birleşimi."},
+      {title:"Gurbet", artist:"Cem Karaca", year:1974, tags:["Moğollar","B yüzü"], summary:"Namus Belası 45'liğinin B yüzü olarak yayımlandı."},
+      {title:"Resimdeki Gözyaşları", artist:"Cem Karaca", year:1968, tags:["Apaşlar","Ferdy Klein"], summary:"Erken dönem 45'lik hiti; geniş yankı buldu."},
+
+      // Barış Manço
+      {title:"Gülpembe", artist:"Barış Manço", year:1981, tags:["Kurtalan Ekspres","albüm"], summary:"Hüzünlü anlatım ve melodik yapı; kalıcı klasik."},
+      {title:"Dönence", artist:"Barış Manço", year:1981, tags:["Sözüm Meclisten Dışarı","progresif"], summary:"Atmosferik düzenleme; söz-aranjman dengesi."},
+      {title:"Halil İbrahim Sofrası", artist:"Barış Manço", year:1983, tags:["Estağfurullah Ne Haddimize!"], summary:"Halk deyişleriyle çağdaş düzenlemenin buluşması."},
+      {title:"Alla Beni Pulla Beni", artist:"Barış Manço", year:1981, tags:["albüm parçası"], summary:"Ritim-melodi oyunu ve mizahi dil."},
+      {title:"Ali Yazar Veli Bozar", artist:"Barış Manço", year:1981, tags:["deyimler"], summary:"Gündelik deyimleri rock formunda işler."},
+      {title:"Sarı Çizmeli Mehmet Ağa", artist:"Barış Manço", year:1977, tags:["single"], summary:"Toplumsal tip üzerinden adalet/ahlak eleştirisi."},
+      {title:"Kol Düğmeleri", artist:"Barış Manço", year:1965, tags:["erken dönem"], summary:"Erken dönem balad; sade düzenleme."},
+
+      // Erkin Koray
       {title:"Şaşkın", artist:"Erkin Koray", year:1974, tags:["psikedelik"], summary:"Bağlama-gitar sentezi; modülasyonlarla öne çıkar."},
-      {title:"Anma Arkadaş", artist:"Erkin Koray", year:1967, tags:["45'lik"], summary:"Melankolik tını; erken dönem Koray imzası."},
-      {title:"Fesuphanallah", artist:"Erkin Koray", year:1974, tags:["sahne enerjisi"], summary:"Hızlı tempo; doğu-batı geçişleri."},
+      {title:"Fesuphanallah", artist:"Erkin Koray", year:1974, tags:["45'lik"], summary:"Hızlı tempo; doğu-batı geçişleri."},
       {title:"Estarabim", artist:"Erkin Koray", year:1974, tags:["uzun form"], summary:"Doğu ezgileriyle rock armonisinin harmanı."},
-      {title:"Yalnızlar Rıhtımı", artist:"Erkin Koray", year:1973, tags:["balad"], summary:"İçli melodiler ve geniş yankı."}
+      {title:"Yalnızlar Rıhtımı", artist:"Erkin Koray", year:1973, tags:["balad"], summary:"İçli melodiler ve geniş yankı."},
+      {title:"Anma Arkadaş", artist:"Erkin Koray", year:1967, tags:["erken dönem"], summary:"Melankolik tını; Koray imzası."},
+      {title:"Mesafeler", artist:"Erkin Koray", year:1973, tags:["single"], summary:"Psikedelik/Anadolu geçişleriyle bilinen 45'lik."},
+      {title:"Komşu Kızı", artist:"Erkin Koray", year:1974, tags:["B yüzü"], summary:"“Fesuphanallah” 45'liğinin diğer yüzü."}
     ];
 
-    // Render + arama/filtre
+    // Kart üretimi
     const grid = document.getElementById('songGrid');
     function render(list){
       grid.innerHTML = list.map(s => `
-        <article class="card song" data-artist="${s.artist}" data-year="${s.year}">
-          <div class="meta">${tag(s.year)}${tag(s.artist)}${s.tags.map(tag).join('')}</div>
+        <article class="card" data-artist="${s.artist}" data-year="${s.year}">
+          <div class="meta">${tag(s.year)}${tag(s.artist)}${(s.tags||[]).map(tag).join('')}</div>
           <h3>${s.title}</h3>
           <p class="muted">${s.summary}</p>
         </article>`).join('');
     }
+
+    // Arama/filtre: en az 2 harf ister; aksi halde liste boş kalır
     function applyFilters(){
-      const term = norm(document.getElementById('q').value);
+      const termRaw = document.getElementById('q').value || '';
+      const term = norm(termRaw);
       const a = document.getElementById('artistFilter').value;
       const y = document.getElementById('yearFilter').value;
+
+      const shouldShow = term.length >= 2 || a || y;
+      if(!shouldShow){
+        grid.innerHTML = '';
+        const hint = document.getElementById('searchHint');
+        if(hint) hint.style.display = 'block';
+        return;
+      }
       const out = SONGS.filter(s=>{
         const hay = norm([s.title,s.artist,s.year,(s.tags||[]).join(' ')].join(' '));
         const okTerm = !term || hay.includes(term);
@@ -329,14 +271,17 @@
         const okY = !y || String(s.year)===y;
         return okTerm && okA && okY;
       });
+      const hint = document.getElementById('searchHint');
+      if(hint) hint.style.display = out.length? 'none':'block';
       render(out);
     }
-    render(SONGS);
+    render([]); // başlangıçta boş
+
     document.getElementById('q').addEventListener('input', applyFilters);
     document.getElementById('artistFilter').addEventListener('change', applyFilters);
     document.getElementById('yearFilter').addEventListener('change', applyFilters);
 
-    // Tema: kullanıcı seçimi + sistem tercihi
+    // Tema seçimi (kullanıcı tercihi)
     const btn = document.getElementById('themeToggle');
     const saved = localStorage.getItem('tb_theme');
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -344,7 +289,6 @@
     document.documentElement.setAttribute('data-theme', initial);
     btn.textContent = initial === 'light' ? '🌞 Tema' : '🌙 Tema';
     btn.setAttribute('aria-pressed', initial === 'light');
-
     btn.addEventListener('click', () => {
       const curr = document.documentElement.getAttribute('data-theme');
       const next = curr === 'light' ? 'dark' : 'light';
