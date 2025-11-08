@@ -301,7 +301,7 @@
     // Tarihler + bakım
     document.getElementById('yil').textContent = new Date().getFullYear();
     document.getElementById('guncelleme').textContent = new Date().toLocaleDateString('tr-TR',{day:'2-digit',month:'short',year:'numeric'});
-    const MAINTENANCE = true;
+    const MAINTENANCE = false;
     if (MAINTENANCE){
       document.getElementById('maintenance').style.display='grid';
       let r=document.querySelector('meta[name="robots"]');
